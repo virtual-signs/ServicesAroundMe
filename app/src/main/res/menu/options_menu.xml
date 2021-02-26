@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:title="To header">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/menu_home"
+                        android:icon="@drawable/ic_home"
+                        android:title="Home"></item>
+                    <item
+                        android:id="@+id/menu_user_account"
+                        android:icon="@drawable/ic_user_account"
+                        android:title="My Account"></item>
+                </group>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/menu_services_catalogue"
+            android:icon="@drawable/ic_catalogue"
+            android:title="Services"></item>
+        <item
+            android:id="@+id/menu_quote"
+            android:icon="@drawable/ic_quote"
+            android:title="Quote"></item>
+        <item
+            android:id="@+id/menu_orders"
+            android:icon="@drawable/ic_orders"
+            android:title="Orders/Purchases"></item>
+        <item
+            android:id="@+id/menu_inbox"
+            android:icon="@drawable/ic_inbox"
+            android:title="Inbox"></item>
+        <item
+            android:id="@+id/menu_feedback"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback"></item>
+        <item
+            android:id="@+id/menu_fovourites"
+            android:icon="@drawable/ic_favorites"
+            android:title="Favourites"></item>
+    </group>
+    <item android:title="To Footer">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_preferences"
+                    android:icon="@drawable/ic_preferences"
+                    android:title="Preferences"></item>
+                <item
+                    android:id="@+id/menu_help"
+                    android:icon="@drawable/ic_help"
+                    android:title="Help"></item>
+                <item
+                    android:id="@+id/menu_login"
+                    android:icon="@drawable/ic_login"
+                    android:title="LOGIN"></item>
+                <item
+                    android:id="@+id/menu_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="LOGOUT"></item>
+            </group>
+        </menu>
+    </item>
+</menu>

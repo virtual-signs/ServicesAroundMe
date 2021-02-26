@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Services Around Me</string>
+    <string name="WelcomeString">Welcome to the User_Name</string>
+    <string name="app_name1">ServicesAroundMe</string>
+    <string name="openNavigation">Open navigation drawer</string>
+    <string name="closeNavigation">Close navigation drawer</string>
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361029837386",
+    "project_id": "servicesaroundme-c14df",
+    "storage_bucket": "servicesaroundme-c14df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361029837386:android:39ff6e056a32b905173cb3",
+        "android_client_info": {
+          "package_name": "com.example.servicesaroundme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361029837386-1dri9hcjq8cntorv4bdqcvnvav0r4m47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAjgJL4rLGtAcQMhhk8_XJkq4ZlHJQ8JA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361029837386-1dri9hcjq8cntorv4bdqcvnvav0r4m47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
