@@ -8,6 +8,8 @@ import com.example.servicesaroundme.R;
 
 public class homeActivity extends AppCompatActivity {
 
+
+    // this is new comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
