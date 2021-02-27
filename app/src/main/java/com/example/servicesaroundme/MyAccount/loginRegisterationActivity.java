@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.servicesaroundme.CoreCapabilities.homeActivity;
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.UtilityFunctions.testActivity;
+import com.example.servicesaroundme.Testing.testActivity;
+import com.example.servicesaroundme.Testing.testMapsActivity;
 
 public class loginRegisterationActivity extends AppCompatActivity {
     // 1-Define Objects
@@ -27,8 +27,9 @@ public class loginRegisterationActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homeIntent = new Intent(loginRegisterationActivity.this, testActivity.class);
-
+                Intent homeIntent = new Intent(loginRegisterationActivity.this, testMapsActivity.class);
+                //Intent homeIntent = new Intent(loginRegisterationActivity.this, testActivity.class);
+                // Intent homeIntent = new Intent(loginRegisterationActivity.this, .class); // add class to open different page for testing
                 startActivity(homeIntent);
             }
         });

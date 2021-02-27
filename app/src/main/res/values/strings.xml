@@ -4,5 +4,6 @@
     <string name="app_name1">ServicesAroundMe</string>
     <string name="openNavigation">Open navigation drawer</string>
     <string name="closeNavigation">Close navigation drawer</string>
+    <string name="title_activity_test_maps">Map</string>
 
 </resources>

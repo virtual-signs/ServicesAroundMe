@@ -1,12 +1,11 @@
-package com.example.servicesaroundme.UtilityFunctions;
+package com.example.servicesaroundme.Testing;
 
 import android.content.Intent;
-import android.drm.DrmStore;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.servicesaroundme.*;
 import com.example.servicesaroundme.CoreCapabilities.homeActivity;
 import com.example.servicesaroundme.Favourites.favouritesActivity;
 import com.example.servicesaroundme.Feedback.feedbackActivity;
@@ -45,6 +44,13 @@ public class testActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(tb);
 
+        /*------------ Navigation Drawer Menu ----------------*/
+
+        // Hide and Show items
+        Menu menu = nv.getMenu();
+        menu.findItem(R.id.menu_logout).setVisible(false);
+
+        nv.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, dl,tb,R.string.openNavigation,R.string.closeNavigation);
         dl.addDrawerListener(toggle);
         toggle.syncState();

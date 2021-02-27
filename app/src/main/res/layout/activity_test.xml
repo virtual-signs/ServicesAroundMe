@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UtilityFunctions.testActivity"
+    tools:context=".Testing.testActivity"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
     <include
@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/design_default_color_on_primary">
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
