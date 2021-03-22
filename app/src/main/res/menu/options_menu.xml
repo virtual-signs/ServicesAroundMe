@@ -52,13 +52,13 @@
                     android:icon="@drawable/ic_help"
                     android:title="Help"></item>
                 <item
-                    android:id="@+id/menu_login"
-                    android:icon="@drawable/ic_login"
-                    android:title="LOGIN"></item>
-                <item
                     android:id="@+id/menu_logout"
                     android:icon="@drawable/ic_logout"
                     android:title="LOGOUT"></item>
+                <item
+                    android:id="@+id/menu_login"
+                    android:icon="@drawable/ic_login"
+                    android:title="LOGIN"></item>
             </group>
         </menu>
     </item>

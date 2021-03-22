@@ -22,7 +22,6 @@ public class homeActivity extends AppCompatActivity {
     NavigationView obj_NavigationView;
     Toolbar obj_Toolbar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +32,7 @@ public class homeActivity extends AppCompatActivity {
         obj_NavigationView = findViewById(R.id.nav_view);
         obj_Toolbar = findViewById(R.id.myToolbar);
 
-
+        setSupportActionBar(obj_Toolbar);
 
 
         obj_btnLogout.setOnClickListener(new View.OnClickListener() {
