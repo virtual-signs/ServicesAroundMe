@@ -5,32 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Testing.testActivity"
     android:fitsSystemWindows="true"
+    tools:context=".Testing.testActivity"
     tools:openDrawer="start">
-    <include
-        android:id="@+id/myToolbar"
-        layout="@layout/toolbar"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/design_default_color_on_primary">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/options_menu"
-        android:layout_gravity="start"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

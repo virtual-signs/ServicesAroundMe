@@ -49,8 +49,8 @@ public class loginRegisterationActivity extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = obj_FirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null) {
                     Toast.makeText(loginRegisterationActivity.this, "Already logged in.", Toast.LENGTH_SHORT).show();
-                    //startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-                    startActivity(new Intent(loginRegisterationActivity.this, testActivity.class));
+                    startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+//                    startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
                 } else {
                     Toast.makeText(loginRegisterationActivity.this, "Log in Please.", Toast.LENGTH_SHORT).show();
                 }
@@ -84,6 +84,7 @@ public class loginRegisterationActivity extends AppCompatActivity {
                                 Toast.makeText(loginRegisterationActivity.this, "Email Id is already registered.", Toast.LENGTH_SHORT).show();
                             }else{
                                 startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
                             }
                         }
                     });
@@ -121,6 +122,7 @@ public class loginRegisterationActivity extends AppCompatActivity {
                                 Toast.makeText(loginRegisterationActivity.this, "Login Error, please try again", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
                             }
                         }
                     });
@@ -137,11 +139,11 @@ public class loginRegisterationActivity extends AppCompatActivity {
                 /*************************************************************************************/
 
                 //Intent homeIntent = new Intent(loginRegisterationActivity.this, testMapsActivity.class);
-                Intent homeIntent = new Intent(loginRegisterationActivity.this, testActivity.class);
+                //Intent homeIntent = new Intent(loginRegisterationActivity.this, testActivity.class);
                 //Intent homeIntent = new Intent(loginRegisterationActivity.this, homeActivity.class); // add class to open different page for testing
 
                 //Intent homeIntent = new Intent(loginRegisterationActivity.this, homeActivity.class); // on Success, should open a HOME PAGE
-                startActivity(homeIntent);
+                //startActivity(homeIntent);
             }
         });
     }

@@ -27,12 +27,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-public class testActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class testActivity extends AppCompatActivity  {
     //variables
     DrawerLayout dl;
     NavigationView nv;
     Toolbar tb;
+//implements NavigationView.OnNavigationItemSelectedListener
 
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +46,9 @@ public class testActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(tb);
 
-        /*------------ Navigation Drawer Menu ----------------*/
+        */
+/*------------ Navigation Drawer Menu ----------------*//*
+
 
         // Hide and Show items
         Menu menu = nv.getMenu();
@@ -130,4 +134,6 @@ public class testActivity extends AppCompatActivity implements NavigationView.On
         dl.closeDrawer(GravityCompat.START);
         return true;
     }
+*/
+
 }

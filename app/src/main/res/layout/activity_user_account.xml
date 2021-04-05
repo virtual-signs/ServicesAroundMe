@@ -4,10 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyAccount.userAccountActivity">
+    tools:context=".MyAccount.userAccountActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <include
         android:id="@+id/myToolbar"
         layout="@layout/toolbar"/>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/options_menu" />
 </RelativeLayout>
