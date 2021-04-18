@@ -5,32 +5,33 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.servicesaroundme.CoreCapabilities.homeActivity"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.servicesaroundme.CoreCapabilities.homeActivity">
+
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/map"
+        android:id="@+id/myFragMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CoreCapabilities.homeActivity" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <include
-        android:id="@+id/myToolbar"
-        layout="@layout/toolbar"
-        />
+        <include
+            android:id="@+id/myToolbar"
+            layout="@layout/toolbar" />
     </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/nav_view"
+        android:layout_gravity="start"
         app:headerLayout="@layout/header"
-        app:menu="@menu/options_menu"
-        android:layout_gravity="start" />
+        app:menu="@menu/options_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -10,10 +10,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,35 +38,55 @@ import com.example.servicesaroundme.Testing.testActivity;
 import com.example.servicesaroundme.Testing.testMapsActivity;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
 public class homeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, LocationListener {
+    // Variables for FirebaseAuth
     private FirebaseAuth.AuthStateListener obj_AuthStateListener;
-    //FirebaseAuth obj_FirebaseAuth;
+
+    //Variables for Drawer/Navigation View
     DrawerLayout obj_DrawerLayout;
     NavigationView obj_NavigationView;
     Toolbar obj_Toolbar;
+
+    // Variables for Map
     private GoogleMap mMap;
     SupportMapFragment mapFragment;
     Location obj_LastLocation;
-    LocationRequest obj_LocationRequest;
     GoogleApi obj_GoogleApi;
     private FusedLocationProviderClient obj_FusedlocationProvideClient;
+    private LocationCallback locationCallback;
+    private Boolean requestingLocationUpdates;
+    boolean isPermissionGranted;
+    SupportMapFragment supportMapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +96,23 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         /* ======================= MAPS =================== */
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.myFragMap);
         mapFragment.getMapAsync(this);
-        setupMapsOnCreate();
 
-        /* ========================================= */
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) {
+                    return;
+                }
+                for (Location location : locationResult.getLocations()) {
+                    // Update UI with location data
+                    // ...
+                }
+            }
+        };
 
-
+        /* ===================== Drawer/Navigation ==================== */
         obj_DrawerLayout = findViewById(R.id.drawer_layout);
         obj_NavigationView = findViewById(R.id.nav_view);
         obj_Toolbar = findViewById(R.id.myToolbar);
@@ -98,46 +131,13 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         obj_NavigationView.setNavigationItemSelectedListener(this);
         obj_NavigationView.setCheckedItem(R.id.menu_home);
 
-/*        obj_btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(homeActivity.this, loginRegisterationActivity.class));
-            }
-        });*/
-
-    }
-
-    private void setupMapsOnCreate() {
-        obj_FusedlocationProvideClient = LocationServices.getFusedLocationProviderClient(this);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        obj_FusedlocationProvideClient.getLastLocation()
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        // Got last known location. In some rare situations this can be null.
-                        if (location != null) {
-                            // Logic to handle location object
-                        }
-                    }
-                });
-
-        if (ActivityCompat.checkSelfPermission(homeActivity.this, ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            //getCurrentLocation();
-        }
-        else{
-            ActivityCompat.requestPermissions(homeActivity.this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-        }
+//        obj_btnLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                startActivity(new Intent(homeActivity.this, loginRegisterationActivity.class));
+//            }
+//        });
     }
 
 
@@ -163,50 +163,10 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-
-    private void getCurrentLocation() {
-
-         if (ActivityCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        Task<Location> tsk = obj_FusedlocationProvideClient.getLastLocation();
-        tsk.addOnSuccessListener(new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                // on success
-                if(location != null){
-                    // sync map
-                    mapFragment.getMapAsync(new OnMapReadyCallback() {
-                        @Override
-                        public void onMapReady(GoogleMap googleMap) {
-                            //init lat long
-                            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                            // marker options
-                            MarkerOptions  options = new MarkerOptions().position(latLng).title("HERE I AM");
-                            //Zoom
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
-                            googleMap.addMarker(options);
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-
-
     //    Location Listner functions
     @Override
     public void onLocationChanged(Location location) {
-
+        obj_LastLocation = location;
     }
 
     @Override
@@ -223,14 +183,6 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
     public void onProviderDisabled(String provider) {
 
     }
-
-    protected void createLocationRequest() {
-        LocationRequest locationRequest = LocationRequest.create();
-        locationRequest.setInterval(1000);
-        locationRequest.setFastestInterval(1000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-    }
-
 
     @Override
     public void onBackPressed() {
@@ -306,4 +258,28 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    private void checkMapsPermissions(){
+        Dexter.withContext(this).withPermission(ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                Toast.makeText(homeActivity.this, "PERMISSION GRANTED", Toast.LENGTH_SHORT).show();
+                isPermissionGranted = true;
+            }
+
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                Intent i = new Intent();
+                i.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", getPackageName(), "");
+                i.setData(uri);
+                startActivity(i);
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                permissionToken.continuePermissionRequest();
+            }
+        }).check();
+    }
 }
+
