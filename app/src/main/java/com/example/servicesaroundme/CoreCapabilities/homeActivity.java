@@ -184,6 +184,29 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    // =============== FUNCTIONS FOR TOOLBAR ========================
+    public void onCreateSetupToolbar(){
+        //Variables for Drawer/Navigation View
+        //DrawerLayout obj_DrawerLayout;
+        //NavigationView obj_NavigationView;
+        //Toolbar obj_Toolbar;
+
+        /* ===================== Drawer/Navigation ==================== */
+        obj_DrawerLayout = findViewById(R.id.drawer_layout);
+        obj_NavigationView = findViewById(R.id.nav_view);
+        obj_Toolbar = findViewById(R.id.myToolbar);
+
+        setSupportActionBar(obj_Toolbar);
+
+        obj_NavigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, obj_DrawerLayout, obj_Toolbar, R.string.openNavigation, R.string.closeNavigation);
+        obj_DrawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        obj_NavigationView.setNavigationItemSelectedListener(this);
+        obj_NavigationView.setCheckedItem(R.id.menu_home);
+    }
+
     @Override
     public void onBackPressed() {
         if (obj_DrawerLayout.isDrawerOpen(GravityCompat.START)) {

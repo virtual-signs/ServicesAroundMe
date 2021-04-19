@@ -17,6 +17,7 @@ import com.example.servicesaroundme.Testing.testActivity;
 import com.example.servicesaroundme.Testing.testMapsActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,10 +26,14 @@ public class loginRegisterationActivity extends AppCompatActivity {
     // 1-Define Objects
     FirebaseAuth obj_FirebaseAuth;
     private FirebaseAuth.AuthStateListener obj_AuthStateListener;
-
-    EditText obj_txtEmail, obj_txtPwd;
-    Button obj_btnLogin, obj_btnRegister;
+    //EditText obj_txtEmail, obj_txtPwd;
+    //Button obj_btnLogin, obj_btnRegister;
     TextView tvHelp;
+
+    TextInputLayout txtUserId, txtPassword;
+    Button btnLogin, btnRegister;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +42,10 @@ public class loginRegisterationActivity extends AppCompatActivity {
 
         //2-Find object by id
         obj_FirebaseAuth = FirebaseAuth.getInstance();
-        obj_btnLogin = findViewById(R.id.btnLogin);
-        obj_btnRegister = findViewById(R.id.btnRegister);
-        obj_txtEmail = findViewById(R.id.txtEmailId);
-        obj_txtPwd = findViewById(R.id.txtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
+        txtUserId = findViewById(R.id.txtUserId);
+        txtPassword = findViewById(R.id.txtPassword);
 
         // Initialise & Setup FireBase Auth Listener for user account if already exists (pre-saved)
         obj_AuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -58,26 +63,25 @@ public class loginRegisterationActivity extends AppCompatActivity {
         };
 
         //3-create functions for objects
-        obj_btnRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String strEmail, strPwd;
-                strEmail = obj_txtEmail.getText().toString();
-                strPwd = obj_txtPwd.getText().toString();
+                String strUserId = txtUserId.getEditText().getText().toString();
+                String strPassword = txtPassword.getEditText().getText().toString();
 
-                if (strEmail.isEmpty()){
-                    obj_txtEmail.setError("Please enter a valid email address.");
-                    obj_txtEmail.requestFocus();
+                if (strUserId.isEmpty()){
+                    txtUserId.setError("Please enter a valid email address.");
+                    txtUserId.requestFocus();
                 }
-                else if (strPwd.isEmpty()){
-                    obj_txtPwd.setError("Please enter a valid password.");
-                    obj_txtPwd.requestFocus();
+                else if (strPassword.isEmpty()){
+                    txtPassword.setError("Please enter a valid password.");
+                    txtPassword.requestFocus();
                 }
-                else if (strEmail.isEmpty() && strPwd.isEmpty()){
+                else if (strUserId.isEmpty() && strPassword.isEmpty()){
                     Toast.makeText(loginRegisterationActivity.this, "Both Email & Password fields are empty. Please provide valid values.", Toast.LENGTH_SHORT).show();
                 }
-                else if (!(strEmail.isEmpty() || strPwd.isEmpty())){
-                    obj_FirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(loginRegisterationActivity.this, new OnCompleteListener<AuthResult>() {
+                else if (!(strUserId.isEmpty() || strPassword.isEmpty())){
+                    obj_FirebaseAuth.createUserWithEmailAndPassword(strUserId, strPassword).addOnCompleteListener(loginRegisterationActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
@@ -96,26 +100,25 @@ public class loginRegisterationActivity extends AppCompatActivity {
             }
         });
 
-        obj_btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String strEmail, strPwd;
-                strEmail = obj_txtEmail.getText().toString();
-                strPwd = obj_txtPwd.getText().toString();
+                String strUserId = txtUserId.getEditText().getText().toString();
+                String strPassword = txtPassword.getEditText().getText().toString();
 
-                if (strEmail.isEmpty()){
-                    obj_txtEmail.setError("Please enter valid email addres");
-                    obj_txtEmail.requestFocus();
+                if (strUserId.isEmpty()){
+                    txtUserId.setError("Please enter valid email addres");
+                    txtUserId.requestFocus();
                 }
-                else if (strPwd.isEmpty()){
-                    obj_txtPwd.setError("Please provide valid password");
-                    obj_txtPwd.requestFocus();
+                else if (strPassword.isEmpty()){
+                    txtPassword.setError("Please provide valid password");
+                    txtPassword.requestFocus();
                 }
-                else if (strEmail.isEmpty() && strPwd.isEmpty()){
+                else if (strUserId.isEmpty() && strPassword.isEmpty()){
                     Toast.makeText(loginRegisterationActivity.this, "Both Fields are empty", Toast.LENGTH_SHORT).show();
                 }
-                else if (!(strEmail.isEmpty() && strPwd.isEmpty())) {
-                    obj_FirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(loginRegisterationActivity.this, new OnCompleteListener<AuthResult>() {
+                else if (!(strUserId.isEmpty() && strPassword.isEmpty())) {
+                    obj_FirebaseAuth.signInWithEmailAndPassword(strUserId, strPassword).addOnCompleteListener(loginRegisterationActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
