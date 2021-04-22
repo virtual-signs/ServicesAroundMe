@@ -18,6 +18,10 @@ import com.example.servicesaroundme.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
+//fragment_favourites_quotes
+//        fragment_favourites_service_providers
+//        fragment_favourites_services
+
 public class feedbackActivity extends AppCompatActivity {
 
     private TabLayout oFeedbackTabLayout;
