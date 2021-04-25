@@ -8,6 +8,4 @@
     android:fitsSystemWindows="true"
     tools:context=".Testing.testActivity"
     tools:openDrawer="start">
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

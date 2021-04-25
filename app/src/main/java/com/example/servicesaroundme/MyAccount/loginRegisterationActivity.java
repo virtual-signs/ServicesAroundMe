@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.servicesaroundme.CoreCapabilities.baseActivity;
 import com.example.servicesaroundme.CoreCapabilities.homeActivity;
 import com.example.servicesaroundme.R;
 import com.example.servicesaroundme.Testing.testActivity;
@@ -33,8 +34,6 @@ public class loginRegisterationActivity extends AppCompatActivity {
     TextInputLayout txtUserId, txtPassword;
     Button btnLogin, btnRegister;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,7 @@ public class loginRegisterationActivity extends AppCompatActivity {
                 if (mFirebaseUser != null) {
                     Toast.makeText(loginRegisterationActivity.this, "Already logged in.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                    startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
+//                    startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                 } else {
                     Toast.makeText(loginRegisterationActivity.this, "Log in Please.", Toast.LENGTH_SHORT).show();
                 }
@@ -88,7 +87,7 @@ public class loginRegisterationActivity extends AppCompatActivity {
                                 Toast.makeText(loginRegisterationActivity.this, "Email Id is already registered.", Toast.LENGTH_SHORT).show();
                             }else{
                                 startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                                startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                             }
                         }
                     });
@@ -125,7 +124,7 @@ public class loginRegisterationActivity extends AppCompatActivity {
                                 Toast.makeText(loginRegisterationActivity.this, "Login Error, please try again", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                                startActivity(new Intent(loginRegisterationActivity.this, testMapsActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                             }
                         }
                     });
@@ -134,10 +133,6 @@ public class loginRegisterationActivity extends AppCompatActivity {
                 {
                     Toast.makeText(loginRegisterationActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
 
                 /*************************************************************************************/
 
