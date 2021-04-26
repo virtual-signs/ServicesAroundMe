@@ -5,8 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
-    tools:context=".CoreCapabilities.baseActivity">
+    tools:context=".CoreCapabilities.baseActivity"
+    tools:openDrawer="start">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -33,17 +33,43 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- This NAV VIEW IS WITHOUT A FOOTER -->
+    <!--    <com.google.android.material.navigation.NavigationView-->
+    <!--        android:id="@+id/nav_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_gravity="start"-->
+    <!--        app:headerLayout="@layout/header"-->
+    <!--        app:menu="@menu/options_menu">-->
+    <!--    </com.google.android.material.navigation.NavigationView>-->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/nav_view_container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/options_menu"
-        >
-
+        android:fitsSystemWindows="false"
+        android:layout_gravity="start">
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical"
+            android:isScrollContainer="true"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/options_menu"
+            android:layout_gravity="top"
+            android:layout_marginBottom="50dp"/>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:overScrollMode="never"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:headerLayout="@layout/footer"
+            app:menu="@null" />
     </com.google.android.material.navigation.NavigationView>
-
 </androidx.drawerlayout.widget.DrawerLayout>
 
 

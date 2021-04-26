@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/ic_launcher_background"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:scrollbars="none">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:columnCount="6"
+        android:rowCount="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:paddingEnd="20dp"
+            android:text="App Version:" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:text="@string/version"
+            android:textSize="15sp" />
+        <Space android:layout_width="50dp">
+            android:layout_row="0"
+            android:layout_column="2"
+        </Space>
+        <ImageView
+            android:id="@+id/menu_preferences_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:clickable="true"
+            android:src="@drawable/ic_preferences"
+            android:tooltipText="Preferences &amp; Notifications"/>
+        <ImageView
+            android:id="@+id/menu_help_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:clickable="true"
+            android:src="@drawable/ic_help"
+            android:tooltipText="Help!"/>
+        <ImageView
+            android:id="@+id/menu_log_in_out_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:clickable="true"
+            android:src="@drawable/ic_logout"
+            android:tooltipText="Log Out!"/>
+    </GridLayout>
+</LinearLayout>

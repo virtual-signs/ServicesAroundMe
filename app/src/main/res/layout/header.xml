@@ -17,7 +17,8 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:clickable="true"
-            android:src="@drawable/ic_user_account" />
+            android:src="@drawable/ic_user_account"
+            android:tooltipText="User Account"/>
         <ImageView
             android:id="@+id/menu_home_img"
             android:layout_width="25dp"
@@ -25,7 +26,8 @@
             android:layout_row="0"
             android:layout_column="2"
             android:clickable="true"
-            android:src="@drawable/ic_home" />
+            android:src="@drawable/ic_home"
+            android:tooltipText="Home Page"/>
     </GridLayout>
 
     <TextView
