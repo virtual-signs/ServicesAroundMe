@@ -70,7 +70,8 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
-public class homeActivity extends baseActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, LocationListener {
+//public class homeActivity extends baseActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, LocationListener {
+public class homeActivity extends baseActivity implements OnMapReadyCallback, LocationListener {
     // Variables for FirebaseAuth
     private FirebaseAuth.AuthStateListener obj_AuthStateListener;
 
@@ -97,7 +98,7 @@ public class homeActivity extends baseActivity implements NavigationView.OnNavig
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_home, null, false);
-        drawerLayout.addView(contentView, 0);
+//        drawerLayout.addView(contentView, 0);
 
         /* ======================= MAPS =================== */
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.

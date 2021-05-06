@@ -32,6 +32,8 @@ public class testActivity extends AppCompatActivity  {
     DrawerLayout dl;
     NavigationView nv;
     Toolbar tb;
+
+
 //implements NavigationView.OnNavigationItemSelectedListener
 
 /*

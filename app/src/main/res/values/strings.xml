@@ -16,4 +16,6 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="version">0.01</string>
+    <string name="Search">Search</string>
+    <string name="page_title">Page Title</string>
 </resources>

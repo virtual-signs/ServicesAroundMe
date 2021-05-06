@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/my_account_menu_option"
+        android:icon="@drawable/ic_user_account"
+        android:title="My Account">
+    </item>
+    <item android:id="@+id/catalogue_menu_option"
+        android:icon="@drawable/ic_catalogue"
+        android:title="Catalogue">
+    </item>
+    <item android:id="@+id/search_menu_option"
+        android:icon="@drawable/ic_search_24"
+        android:title="Search">
+    </item>
+    <item android:id="@+id/quotes_menu_option"
+        android:icon="@drawable/ic_quote"
+        android:title="Quotes">
+    </item>
+    <item android:id="@+id/inbox_menu_option"
+        android:icon="@drawable/ic_inbox"
+        android:title="Inbox">
+    </item>
+</menu>

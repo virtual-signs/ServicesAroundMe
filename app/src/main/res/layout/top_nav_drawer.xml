@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/top_nav_drawer_template"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start"
+        tools:context=".CoreCapabilities.baseActivity"
+        android:orientation="horizontal">
+        <!--    tools:showIn="@layout/activity_base">-->
+<!--        <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <com.google.android.material.appbar.AppBarLayout-->
+<!--                android:id="@+id/appbarLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/colorAccent"-->
+<!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--                app:liftOnScroll="true"-->
+<!--                tools:ignore="MissingConstraints">-->
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/teal_700"
+                    android:elevation="4dp"
+                    android:fitsSystemWindows="true"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="@drawable/ic_menu_24"
+                    app:title="TEST ME!">
+                </com.google.android.material.appbar.MaterialToolbar>
+<!--                <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:collapsedTitleGravity="bottom"-->
+<!--                    app:contentScrim="@color/colorPrimaryDark"-->
+<!--                    app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@color/design_default_color_primary_dark" />-->
+<!--                    <include-->
+<!--                        android:id="@+id/toolbar"-->
+<!--                        layout="@layout/toolbar"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content" />-->
+                    <!--            <com.google.android.material.tabs.TabLayout-->
+                    <!--                android:id="@+id/tabLayout"-->
+                    <!--                android:layout_width="match_parent"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                app:layout_constraintTop_toBottomOf="@+id/toolbar"-->
+                    <!--                app:tabMode="scrollable" />-->
+<!--                </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+<!--            </com.google.android.material.appbar.AppBarLayout>-->
+            <!--        <FrameLayout-->
+            <!--            android:id="@+id/frameLayout_Content"-->
+            <!--            app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent">-->
+            <!--        <androidx.viewpager.widget.ViewPager-->
+            <!--            android:id="@+id/viewPager"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />-->
+            <!--        </FrameLayout>-->
+            <fragment
+                android:id="@+id/navHostFrag"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appbarLayout"
+                app:navGraph="@navigation/main_navigation" />
+<!--        </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+        <!-- This NAV VIEW IS WITHOUT A FOOTER -->
+        <!--    <com.google.android.material.navigation.NavigationView-->
+        <!--        android:id="@+id/nav_view"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:layout_gravity="start"-->
+        <!--        app:headerLayout="@layout/header"-->
+        <!--        app:menu="@menu/options_menu">-->
+        <!--    </com.google.android.material.navigation.NavigationView>-->
+<!--        <com.google.android.material.navigation.NavigationView-->
+<!--            android:id="@+id/nav_view_container"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:fitsSystemWindows="false">-->
+
+<!--            <com.google.android.material.navigation.NavigationView-->
+<!--                android:id="@+id/nav_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="top"-->
+<!--                android:layout_marginBottom="50dp"-->
+<!--                android:isScrollContainer="true"-->
+<!--                android:scrollbarAlwaysDrawVerticalTrack="true"-->
+<!--                android:scrollbars="vertical"-->
+<!--                app:headerLayout="@layout/top_nav_header"-->
+<!--                app:menu="@menu/top_nav_options_menu" />-->
+
+<!--            <com.google.android.material.navigation.NavigationView-->
+<!--                android:id="@+id/nav_view_footer"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="bottom"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:scrollIndicators="none"-->
+<!--                android:scrollbars="none"-->
+<!--                app:headerLayout="@layout/top_nav_footer"-->
+<!--                app:menu="@null" />-->
+<!--        </com.google.android.material.navigation.NavigationView>-->
+</LinearLayout>
+

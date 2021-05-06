@@ -1,8 +1,10 @@
 package com.example.servicesaroundme.ServiceCatalogue;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import com.example.servicesaroundme.R;
 
 public class serviceCatalogueActivity extends baseActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,6 @@ public class serviceCatalogueActivity extends baseActivity {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_service_catalogue, null, false);
-        drawerLayout.addView(contentView, 0);
+//        drawerLayout.addView(contentView, 0);
     }
 }

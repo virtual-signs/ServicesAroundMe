@@ -52,11 +52,11 @@ public class loginRegisterationActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = obj_FirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null) {
-                    baseActivity.LOGIN_STATUS_FLAG = true;
+//                    baseActivity.LOGIN_STATUS_FLAG = true;
                     setupPersonalisation();
                     Toast.makeText(loginRegisterationActivity.this, "Already logged in.", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                    startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
+//                    startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+                    startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                 } else {
                     Toast.makeText(loginRegisterationActivity.this, "Log in Please.", Toast.LENGTH_SHORT).show();
                 }
@@ -88,10 +88,10 @@ public class loginRegisterationActivity extends AppCompatActivity {
                             if(!task.isSuccessful()){
                                 Toast.makeText(loginRegisterationActivity.this, "Email Id is already registered.", Toast.LENGTH_SHORT).show();
                             }else{
-                                baseActivity.LOGIN_STATUS_FLAG = true;
+//                                baseActivity.LOGIN_STATUS_FLAG = true;
                                 setupPersonalisation();
-                                startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                             }
                         }
                     });
@@ -127,10 +127,10 @@ public class loginRegisterationActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(loginRegisterationActivity.this, "Login Error, please try again", Toast.LENGTH_SHORT).show();
                             } else {
-                                baseActivity.LOGIN_STATUS_FLAG = true;
+//                                baseActivity.LOGIN_STATUS_FLAG = true;
                                 setupPersonalisation();
-                                startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
-//                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
+//                                startActivity(new Intent(loginRegisterationActivity.this, homeActivity.class));
+                                startActivity(new Intent(loginRegisterationActivity.this, baseActivity.class));
                             }
                         }
                     });
@@ -157,10 +157,10 @@ public class loginRegisterationActivity extends AppCompatActivity {
         obj_FirebaseAuth.addAuthStateListener(obj_AuthStateListener);
     }
     private void setupPersonalisation (){
-        baseActivity.LOGIN_STATUS_FLAG = true;
+//        baseActivity.LOGIN_STATUS_FLAG = true;
         // keep User Type in FireAuth database and fetch upon login
         //baseActivity.USER_TYPE = <fetch from fireauth db>;
-        baseActivity.USER_TYPE = 1;         // for testing User
+//        baseActivity.USER_TYPE = 1;         // for testing User
 //        baseActivity.USER_TYPE = 2;         // for testing Service Provider / Supplier
 //        baseActivity.USER_TYPE = 9;         // for testing Admin
 

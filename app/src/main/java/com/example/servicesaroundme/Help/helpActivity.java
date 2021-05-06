@@ -24,7 +24,7 @@ public class helpActivity extends baseActivity {
 
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_help, null, false);
-        drawerLayout.addView(contentView, 0);
+//        drawerLayout.addView(contentView, 0);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class helpActivity extends baseActivity {
         super.onBackPressed();
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return super.onNavigationItemSelected(item);
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        return super.onNavigationItemSelected(item);
+//    }
 }

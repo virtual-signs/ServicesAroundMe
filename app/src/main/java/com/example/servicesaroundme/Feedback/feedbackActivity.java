@@ -1,49 +1,15 @@
 package com.example.servicesaroundme.Feedback;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.servicesaroundme.CoreCapabilities.baseActivity;
-import com.example.servicesaroundme.CoreCapabilities.homeActivity;
-import com.example.servicesaroundme.Favourites.favouritesActivity;
-import com.example.servicesaroundme.Help.helpActivity;
-import com.example.servicesaroundme.Inbox.inboxActivity;
-import com.example.servicesaroundme.MyAccount.loginRegisterationActivity;
-import com.example.servicesaroundme.OrderPurchases.ordersActivity;
-import com.example.servicesaroundme.PreferencesUserMgmt.preferencesActivity;
-import com.example.servicesaroundme.QuotesMgmt.quotesActivity;
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.ServiceCatalogue.serviceCatalogueActivity;
-import com.example.servicesaroundme.Testing.testMapsActivity;
-import com.example.servicesaroundme.UtilityFunctions.ViewPagerAdapter;
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class feedbackActivity extends baseActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class feedbackActivity extends baseActivity {
 
 //    private Toolbar toolbar;
 //    private DrawerLayout drawerLayout;
@@ -64,7 +30,7 @@ public class feedbackActivity extends baseActivity implements NavigationView.OnN
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_feedback, null, false);
-        drawerLayout.addView(contentView, 0);
+//        drawerLayout.addView(contentView, 0);
 
         // find a handle for gui elements used in this class
 //        toolbar = findViewById(R.id.myToolbar);

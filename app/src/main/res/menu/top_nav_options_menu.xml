@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menu_grp_test">
+        <item
+            android:id="@+id/menu_test"
+            android:icon="@drawable/ic_home"
+            android:title="TEST"
+            android:tooltipText="Testing"></item>
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@drawable/ic_home"
+            android:title="HOME"
+            android:tooltipText="Testing"></item>
+        <item
+            android:id="@+id/menu_user_account"
+            android:icon="@drawable/ic_home"
+            android:title="User Account"
+            android:tooltipText="Testing"></item>
+        <item
+            android:id="@+id/menu_log_in_out"
+            android:icon="@drawable/ic_home"
+            android:title="LOG IN OUT"
+            android:tooltipText="Testing"></item>
+        <item
+            android:id="@+id/menu_preferences"
+            android:icon="@drawable/ic_preferences"
+            android:title="Preferences"></item>
+        <item
+            android:id="@+id/menu_help"
+            android:icon="@drawable/ic_help"
+            android:title="Help"></item>
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="LOGOUT"></item>
+        <item
+            android:id="@+id/menu_login"
+            android:icon="@drawable/ic_login"
+            android:title="LOGIN"></item>
+    </group>
+    <group
+        android:id="@+id/menu_grp_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_services_catalogue"
+            android:icon="@drawable/ic_catalogue"
+            android:title="Services"
+            android:tooltipText="Services Catalogue"></item>
+        <item
+            android:id="@+id/menu_quote"
+            android:icon="@drawable/ic_quote"
+            android:title="Quote"
+            android:tooltipText="Quotes"></item>
+        <item
+            android:id="@+id/menu_orders"
+            android:icon="@drawable/ic_orders"
+            android:title="Orders/Purchases"
+            android:tooltipText="Orders/Purchases"></item>
+    </group>
+    <group
+        android:id="@+id/menu_grp_2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_inbox"
+            android:icon="@drawable/ic_inbox"
+            android:title="Inbox"
+            android:tooltipText="Inbox Messages"></item>
+        <item
+            android:id="@+id/menu_feedback"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback"
+            android:tooltipText="Feedback &amp; Ratings"></item>
+    </group>
+    <group
+        android:id="@+id/menu_grp_3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_favourites"
+            android:icon="@drawable/ic_favorites"
+            android:title="Favourites"
+            android:tooltipText="Favourite Items"></item>
+    </group>
+    <!--            <group android:checkableBehavior="single"-->
+    <!--                android:id="@+id/menu_grp_to_footer">-->
+
+    <!--            </group>-->
+</menu>

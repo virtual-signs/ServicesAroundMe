@@ -20,6 +20,6 @@ public class inboxActivity extends baseActivity {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_inbox, null, false);
-        drawerLayout.addView(contentView, 0);
+//        drawerLayout.addView(contentView, 0);
     }
 }

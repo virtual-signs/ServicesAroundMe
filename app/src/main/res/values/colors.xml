@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="menu_background">@color/teal_700</color>
+    <color name="menu_foreground">#FFFFFFFF</color>
+    <color name="menu_text">@color/black</color>
+    <color name="menu_text_selected">#FFFFFFFF</color>
+    <color name="menu_text_hover">#FFFFFFFF</color>
+    <color name="colorPrimary">#4DD0E1</color>
+    <color name="colorPrimaryDark">#974DD0E1</color>
+    <color name="colorAccent">#FD8D8D</color>
+    <color name="colorPrimaryText">@color/black</color>
+    <color name="example">#FFFFFFFF</color>
 </resources>
