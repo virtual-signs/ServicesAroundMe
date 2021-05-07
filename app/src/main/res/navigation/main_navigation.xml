@@ -19,4 +19,49 @@
         android:name="com.example.servicesaroundme.MyAccount.userAccountFragment"
         android:label="fragment_user_account"
         tools:layout="@layout/fragment_user_account" />
+    <fragment
+        android:id="@+id/menu_preferences"
+        android:name="com.example.servicesaroundme.PreferencesUserMgmt.preferencesFragment"
+        android:label="fragment_preferences"
+        tools:layout="@layout/fragment_preferences" />
+    <fragment
+        android:id="@+id/menu_help"
+        android:name="com.example.servicesaroundme.Help.helpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/menu_services_catalogue"
+        android:name="com.example.servicesaroundme.ServiceCatalogue.serviceCatalogueFragment"
+        android:label="fragment_service_catalogue"
+        tools:layout="@layout/fragment_service_catalogue" />
+    <fragment
+        android:id="@+id/menu_quote"
+        android:name="com.example.servicesaroundme.QuotesMgmt.quotesFragment"
+        android:label="fragment_quotes"
+        tools:layout="@layout/fragment_quotes" />
+    <fragment
+        android:id="@+id/menu_orders"
+        android:name="com.example.servicesaroundme.OrderPurchases.ordersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/menu_purchases"
+        android:name="com.example.servicesaroundme.OrderPurchases.purchasesFragment"
+        android:label="fragment_purchases"
+        tools:layout="@layout/fragment_purchases" />
+    <fragment
+        android:id="@+id/menu_inbox"
+        android:name="com.example.servicesaroundme.Inbox.inboxFragment"
+        android:label="fragment_inbox"
+        tools:layout="@layout/fragment_inbox" />
+    <fragment
+        android:id="@+id/menu_feedback"
+        android:name="com.example.servicesaroundme.Feedback.feedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/menu_favourites"
+        android:name="com.example.servicesaroundme.Favourites.favouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" />
 </navigation>

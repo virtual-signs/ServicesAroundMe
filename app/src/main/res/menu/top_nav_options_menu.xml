@@ -54,8 +54,13 @@
         <item
             android:id="@+id/menu_orders"
             android:icon="@drawable/ic_orders"
-            android:title="Orders/Purchases"
-            android:tooltipText="Orders/Purchases"></item>
+            android:title="Orders"
+            android:tooltipText="Orders"></item>
+        <item
+            android:id="@+id/menu_purchases"
+            android:icon="@drawable/ic_orders"
+            android:title="Purchases"
+            android:tooltipText="Purchases"></item>
     </group>
     <group
         android:id="@+id/menu_grp_2"
