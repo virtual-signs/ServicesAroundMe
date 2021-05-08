@@ -5,45 +5,57 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".CoreCapabilities.baseActivity"
-    tools:openDrawer="start"
-    android:fitsSystemWindows="true">
+    tools:openDrawer="start">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         tools:context=".CoreCapabilities.baseActivity">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/teal_700"
-            android:elevation="4dp"
+            android:layout_marginBottom="0dp"
+            android:elevation="0dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:background="@color/teal_700"
             app:layout_collapseMode="pin"
-            app:navigationIcon="@drawable/ic_menu_24"
-            app:title="TEST ME!"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintBottom_toTopOf="@+id/navHostFrag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_menu_24_blk"
+            app:title="TEST ME!" />
+
         <fragment
             android:id="@+id/navHostFrag"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:navGraph="@navigation/main_navigation" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-            <com.google.android.material.navigation.NavigationView
-                android:id="@+id/nav_view_top"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                app:headerLayout="@layout/top_nav_header"
-                app:menu="@menu/top_nav_options_menu">
-        </com.google.android.material.navigation.NavigationView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_top"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/top_nav_header"
+        app:menu="@menu/top_nav_options_menu"></com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
 
+<!--    TO MAKE TOOLBAR TRANSPARENT - but didnt work-->
+<!--    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--    android:background="@drawable/toolbar_bg"-->
 
     <!--    <include-->
     <!--        android:id="@+id/drawer_layout"-->

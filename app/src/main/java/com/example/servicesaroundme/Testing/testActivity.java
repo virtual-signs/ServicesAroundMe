@@ -1,30 +1,9 @@
 package com.example.servicesaroundme.Testing;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.example.servicesaroundme.CoreCapabilities.homeActivity;
-import com.example.servicesaroundme.Favourites.favouritesActivity;
-import com.example.servicesaroundme.Feedback.feedbackActivity;
-import com.example.servicesaroundme.Help.helpActivity;
-import com.example.servicesaroundme.Inbox.inboxActivity;
-import com.example.servicesaroundme.MyAccount.loginRegisterationActivity;
-import com.example.servicesaroundme.MyAccount.userAccountActivity;
-import com.example.servicesaroundme.OrderPurchases.ordersActivity;
-import com.example.servicesaroundme.PreferencesUserMgmt.preferencesActivity;
-import com.example.servicesaroundme.QuotesMgmt.quotesActivity;
-import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.ServiceCatalogue.serviceCatalogueActivity;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 public class testActivity extends AppCompatActivity  {

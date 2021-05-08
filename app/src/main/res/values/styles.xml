@@ -38,7 +38,10 @@
         <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
         <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
     </style>
-
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
     <color name="my_app_primary_color">#03E4CF</color>
     <color name="my_app_secondary_color">#01A4B9</color>
     <color name="my_app_background_color">#F44336</color>
