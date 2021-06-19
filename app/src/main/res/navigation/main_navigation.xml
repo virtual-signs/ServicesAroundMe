@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_test" />
     <fragment
         android:id="@+id/menu_home"
-        android:name="com.example.servicesaroundme.CoreCapabilities.homeFragment"
+        android:name="com.example.servicesaroundme.CoreCapabilities.home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment

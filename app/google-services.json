@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "361029837386",
+    "firebase_url": "https://servicesaroundme-c14df-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "servicesaroundme-c14df",
     "storage_bucket": "servicesaroundme-c14df.appspot.com"
   },
@@ -9,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:361029837386:android:39ff6e056a32b905173cb3",
         "android_client_info": {
-          "package_name": "com.example.servicesaroundme"
+          "package_name": "com.virtualsigns.servicesaroundme"
         }
       },
       "oauth_client": [

@@ -31,8 +31,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -43,7 +43,6 @@
             android:hint="@string/userName"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,6 +63,23 @@
                 android:fontFamily="@font/actor"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/userType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/userTypeEndUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Service Consumer"/>
+        <RadioButton
+            android:id="@+id/userTypeServiceProvider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Service Provider"/>
+        </RadioGroup>
     </LinearLayout>
 
     <LinearLayout

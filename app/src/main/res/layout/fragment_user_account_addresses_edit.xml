@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyAccount.userAccountInfo">
+    tools:context=".MyAccount.userAccountAddressesEdit">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,136 +13,161 @@
         android:paddingHorizontal="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtFullName"
+            android:id="@+id/txtLine1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="*Full Name"
+            android:hint="*Address Line 1"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtPostcode"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="*Postcode"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/actor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFindAddress"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Find Address"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/txtPostcode"
+                app:layout_constraintTop_toTopOf="@+id/txtPostcode" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtMobile"
+            android:id="@+id/txtLine2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="*Mobile Number"
+            android:hint="Address Line 2 (optional)"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="*Email"
-            app:endIconMode="clear_text">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/actor" />
-        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtBusinessName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Profile Title/Business Name"
+            android:hint="City"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtProfile"
+            android:id="@+id/txtCountry"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Profile Details"
+            android:hint="Country"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtWebsite"
+            android:id="@+id/txtPhone"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Website"
+            android:hint="Phone"
             app:endIconMode="clear_text">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor" />
         </com.google.android.material.textfield.TextInputLayout>
-        <CheckBox
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtOptionalInstructions"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Linked Google ID (Junior@gmail.com)" />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Linked Facebook (JuniorFacebook)" />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Linked Apple ID (JuniorApple)" />
+            android:hint="Instructions (Optional)"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/actor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:checked="true"
-                android:text="OTP Verified" />
+                android:text="Delivery Address" />
+
             <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:checked="true"
-                android:text="Account Active" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="2 Factor Auth" />
+                android:text="Billing Address" />
         </LinearLayout>
+
         <RadioGroup
-            android:id="@+id/authenticationType"
+            android:id="@+id/addressType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/radio_border"
             android:orientation="horizontal">
+
             <RadioButton
-                android:id="@+id/authTypeBIO"
+                android:id="@+id/AddTypeDel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BIO-metric"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="Delivery Address" />
+
             <RadioButton
-                android:id="@+id/authTypePWD"
+                android:id="@+id/AddTypeBill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:id="@+id/authTypePIN"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PIN"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="Billing Address" />
         </RadioGroup>
     </LinearLayout>
 </RelativeLayout>

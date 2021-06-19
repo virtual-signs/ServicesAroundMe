@@ -10,11 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.servicesaroundme.PreferencesUserMgmt.preferencesApp;
-import com.example.servicesaroundme.PreferencesUserMgmt.preferencesEmail;
-import com.example.servicesaroundme.PreferencesUserMgmt.preferencesNetwork;
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.UtilityFunctions.ViewPagerAdapter;
+import com.example.servicesaroundme.UtilityFunctions.viewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -95,7 +92,7 @@ public class serviceCatalogue extends Fragment {
     }
 
     private void setupViewPagerAdapter(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),0);
+        viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getChildFragmentManager(),0);
         viewPagerAdapter.addFragment(new serviceCatalogueList(), "Services");
         viewPagerAdapter.addFragment(new serviceCatalogueSettings(), "Settings");
         viewPager.setAdapter(viewPagerAdapter);

@@ -136,7 +136,7 @@ public class homeActivity extends baseActivity implements OnMapReadyCallback, Lo
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-    //    Location Listner functions
+    //    Location Listener functions
     @Override
     public void onLocationChanged(Location location) {
         obj_LastLocation = location;
@@ -155,104 +155,6 @@ public class homeActivity extends baseActivity implements OnMapReadyCallback, Lo
     @Override
     public void onProviderDisabled(String provider) {
 
-    }
-
-//    @Override
-//    public void onBackPressed() {
-//        if (obj_DrawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            obj_DrawerLayout.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-//
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        Intent i;
-//        switch (item.getItemId()) {
-//            case R.id.menu_feedback:
-//                i = new Intent(homeActivity.this, feedbackActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_fovourites:
-//                i = new Intent(homeActivity.this, favouritesActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_help:
-//                i = new Intent(homeActivity.this, helpActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_home:
-//                i = new Intent(homeActivity.this, homeActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_inbox:
-//                i = new Intent(homeActivity.this, inboxActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_login:
-//                i = new Intent(homeActivity.this, loginRegisterationActivity.class);
-//                startActivity(i);
-//                Toast.makeText(this, "LOG IN example", Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.menu_logout:
-//                // logout and then move to login window
-//                FirebaseAuth.getInstance().signOut();
-//                startActivity(new Intent(homeActivity.this, loginRegisterationActivity.class));
-////                i = new Intent(homeActivity.this, loginRegisterationActivity.class);
-////                startActivity(i);
-//                Toast.makeText(this, "LOG OUT example", Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.menu_orders:
-//                i = new Intent(homeActivity.this, ordersActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_preferences:
-//                i = new Intent(homeActivity.this, preferencesActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_quote:
-//                i = new Intent(homeActivity.this, quotesActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_services_catalogue:
-//                i = new Intent(homeActivity.this, serviceCatalogueActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.menu_user_account:
-////                i = new Intent(homeActivity.this, userAccountActivity.class);
-//                i = new Intent(homeActivity.this, testMapsActivity.class);
-//                startActivity(i);
-//                break;
-//            default:
-//
-//        }
-//        obj_DrawerLayout.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
-
-    private void checkMapsPermissions(){
-        Dexter.withContext(this).withPermission(ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
-            @Override
-            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                Toast.makeText(homeActivity.this, "PERMISSION GRANTED", Toast.LENGTH_SHORT).show();
-                isPermissionGranted = true;
-            }
-
-            @Override
-            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                Intent i = new Intent();
-                i.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package", getPackageName(), "");
-                i.setData(uri);
-                startActivity(i);
-            }
-
-            @Override
-            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                permissionToken.continuePermissionRequest();
-            }
-        }).check();
     }
 }
 

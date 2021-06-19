@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.UtilityFunctions.ViewPagerAdapter;
+import com.example.servicesaroundme.UtilityFunctions.viewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -92,10 +92,10 @@ public class userAccount extends Fragment {
     }
 
     private void setupViewPagerAdapter(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),0);
-        viewPagerAdapter.addFragment(new userAccountInfo(), "Account Info");
-        viewPagerAdapter.addFragment(new userAccountDeliveryInfo(), "Delivery");
-        viewPagerAdapter.addFragment(new userAccountBillingInfo(), "Billing");
+        viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getChildFragmentManager(),0);
+        viewPagerAdapter.addFragment(new userAccountInfo(), "Account");
+        viewPagerAdapter.addFragment(new userAccountAddresses(), "Addresses");
+        viewPagerAdapter.addFragment(new userAccountDeliveryInfo(), "spare");
         viewPager.setAdapter(viewPagerAdapter);
     }
 }

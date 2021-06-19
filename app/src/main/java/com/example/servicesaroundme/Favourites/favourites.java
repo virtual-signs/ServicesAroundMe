@@ -10,11 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.servicesaroundme.OrderPurchases.ordersActive;
-import com.example.servicesaroundme.OrderPurchases.ordersApproval;
-import com.example.servicesaroundme.OrderPurchases.ordersCompleted;
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.UtilityFunctions.ViewPagerAdapter;
+import com.example.servicesaroundme.UtilityFunctions.viewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -94,7 +91,7 @@ public class favourites extends Fragment {
     }
 
     private void setupViewPagerAdapter(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),0);
+        viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getChildFragmentManager(),0);
         viewPagerAdapter.addFragment(new favouritesQuotes(), "Quotes");
         viewPagerAdapter.addFragment(new favouritesServices(), "Services");
         viewPagerAdapter.addFragment(new favouritesServiceProviders(), "Service Providers");

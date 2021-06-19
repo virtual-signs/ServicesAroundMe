@@ -10,11 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.servicesaroundme.Favourites.favouritesQuotes;
-import com.example.servicesaroundme.Favourites.favouritesServiceProviders;
-import com.example.servicesaroundme.Favourites.favouritesServices;
 import com.example.servicesaroundme.R;
-import com.example.servicesaroundme.UtilityFunctions.ViewPagerAdapter;
+import com.example.servicesaroundme.UtilityFunctions.viewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -95,7 +92,7 @@ public class feedback extends Fragment {
     }
 
     private void setupViewPagerAdapter(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),0);
+        viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getChildFragmentManager(),0);
         viewPagerAdapter.addFragment(new feedbackOverallRating(), "Overall Rating");
         viewPagerAdapter.addFragment(new feedbackReceived(), "Received");
         viewPagerAdapter.addFragment(new feedbackProvided(), "Provided");

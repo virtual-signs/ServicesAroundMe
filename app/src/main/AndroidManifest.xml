@@ -36,7 +36,8 @@
 
         <activity
             android:name=".CoreCapabilities.baseActivity"
-            android:label="@string/title_activity_base" />
+            android:label="@string/title_activity_base"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <uses-library
             android:name="com.google.android.app.wearable"

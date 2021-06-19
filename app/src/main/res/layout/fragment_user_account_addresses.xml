@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyAccount.userAccountAddresses">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="10dp"
+        android:contentDescription="description"
+        app:srcCompat="@drawable/ic_add_circle_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddAddress_Del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="top|end"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_home_work_24"
+        android:text="Delivery"
+        android:tint="#7986CB"
+        android:tooltipText="Delivery"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:rippleColor="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddAddress_Bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/ic_account_balance_24"
+        android:tint="#7986CB"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:rippleColor="@color/white" />
+</FrameLayout>
+
+
+
