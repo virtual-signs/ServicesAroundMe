@@ -8,7 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ExpandableListView;
+
 import com.example.servicesaroundme.R;
+import com.example.servicesaroundme.UtilityFunctions.eListViewAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +23,14 @@ import com.example.servicesaroundme.R;
  * create an instance of this fragment.
  */
 public class serviceCatalogueList extends Fragment {
+
+    ExpandableListView elvServices;
+    ArrayList<String> level1Services = new ArrayList<>();
+    HashMap<String, ArrayList<String>> level2Services = new HashMap<>();
+    eListViewAdapter elvAdapterServices;
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +76,21 @@ public class serviceCatalogueList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_service_catalogue_list, container, false);
+        View tmpView = inflater.inflate(R.layout.fragment_service_catalogue_list, container, false);
+        elvServices = tmpView.findViewById(R.id.lstServiceCatalogue);
+
+        // adding temp data - this will be loaded from firestore later
+        for(int g=0; g<=10; g++){
+            level1Services.add("Parent" + g);
+            ArrayList<String> arrayList = new ArrayList<>();
+            for(int c=0; c<=5; c++){
+                arrayList.add("Child" + c);
+            }
+            level2Services.put(level1Services.get(g),arrayList);
+        }
+        elvAdapterServices = new eListViewAdapter(level1Services, level2Services);
+        elvServices.setAdapter(elvAdapterServices);
+
+        return tmpView;
     }
 }

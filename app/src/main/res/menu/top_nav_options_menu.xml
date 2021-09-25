@@ -1,45 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/menu_grp_test">
+    <group android:id="@+id/menu_grp_header">
         <item
             android:id="@+id/menu_test"
             android:icon="@drawable/ic_home"
             android:title="TEST"
-            android:tooltipText="Testing"></item>
+            android:tooltipText="Testing" />
         <item
             android:id="@+id/menu_home"
             android:icon="@drawable/ic_home"
             android:title="HOME"
-            android:tooltipText="Testing"></item>
+            android:tooltipText="Home"></item>
         <item
             android:id="@+id/menu_user_account"
             android:icon="@drawable/ic_home"
             android:title="User Account"
-            android:tooltipText="Testing"></item>
-        <item
-            android:id="@+id/menu_log_in_out"
-            android:icon="@drawable/ic_home"
-            android:title="LOG IN OUT"
-            android:tooltipText="Testing"></item>
-        <item
-            android:id="@+id/menu_preferences"
-            android:icon="@drawable/ic_preferences"
-            android:title="Preferences"></item>
-        <item
-            android:id="@+id/menu_help"
-            android:icon="@drawable/ic_help"
-            android:title="Help"></item>
-        <item
-            android:id="@+id/menu_logout"
-            android:icon="@drawable/ic_logout"
-            android:title="LOGOUT"></item>
-        <item
-            android:id="@+id/menu_login"
-            android:icon="@drawable/ic_login"
-            android:title="LOGIN"></item>
+            android:tooltipText="User Account"></item>
     </group>
     <group
-        android:id="@+id/menu_grp_1"
+        android:id="@+id/menu_grp_menu1"
         android:checkableBehavior="single">
         <item
             android:id="@+id/menu_services_catalogue"
@@ -61,10 +40,6 @@
             android:icon="@drawable/ic_orders"
             android:title="Purchases"
             android:tooltipText="Purchases"></item>
-    </group>
-    <group
-        android:id="@+id/menu_grp_2"
-        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_inbox"
             android:icon="@drawable/ic_inbox"
@@ -75,18 +50,39 @@
             android:icon="@drawable/ic_feedback"
             android:title="Feedback"
             android:tooltipText="Feedback &amp; Ratings"></item>
-    </group>
-    <group
-        android:id="@+id/menu_grp_3"
-        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_favourites"
             android:icon="@drawable/ic_favorites"
             android:title="Favourites"
             android:tooltipText="Favourite Items"></item>
     </group>
-    <!--            <group android:checkableBehavior="single"-->
-    <!--                android:id="@+id/menu_grp_to_footer">-->
-
-    <!--            </group>-->
+    <group
+        android:id="@+id/menu_grp_menu2"
+        android:checkableBehavior="single">
+    </group>
+    <group
+        android:id="@+id/menu_grp_footer"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_preferences"
+            android:icon="@drawable/ic_preferences"
+            android:title="Preferences"></item>
+        <item
+            android:id="@+id/menu_help"
+            android:icon="@drawable/ic_help"
+            android:title="Help"></item>
+        <item
+            android:id="@+id/menu_log_in_out"
+            android:icon="@drawable/ic_logout"
+            android:title="LOG IN/OUT"
+            android:tooltipText="Logout"></item>
+        <!--        <item-->
+        <!--            android:id="@+id/menu_logout"-->
+        <!--            android:icon="@drawable/ic_logout"-->
+        <!--            android:title="LOGOUT"></item>-->
+        <!--        <item-->
+        <!--            android:id="@+id/menu_login"-->
+        <!--            android:icon="@drawable/ic_login"-->
+        <!--            android:title="LOGIN"></item>-->
+    </group>
 </menu>

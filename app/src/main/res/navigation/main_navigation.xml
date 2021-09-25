@@ -20,16 +20,6 @@
         android:label="fragment_user_account"
         tools:layout="@layout/fragment_user_account" />
     <fragment
-        android:id="@+id/menu_preferences"
-        android:name="com.example.servicesaroundme.PreferencesUserMgmt.preferences"
-        android:label="fragment_preferences"
-        tools:layout="@layout/fragment_preferences" />
-    <fragment
-        android:id="@+id/menu_help"
-        android:name="com.example.servicesaroundme.Help.help"
-        android:label="fragment_help"
-        tools:layout="@layout/fragment_help" />
-    <fragment
         android:id="@+id/menu_services_catalogue"
         android:name="com.example.servicesaroundme.ServiceCatalogue.serviceCatalogue"
         android:label="fragment_service_catalogue"
@@ -64,4 +54,20 @@
         android:name="com.example.servicesaroundme.Favourites.favourites"
         android:label="fragment_favourites"
         tools:layout="@layout/fragment_favourites" />
+    <fragment
+        android:id="@+id/menu_preferences"
+        android:name="com.example.servicesaroundme.PreferencesUserMgmt.preferences"
+        android:label="fragment_preferences"
+        tools:layout="@layout/fragment_preferences" />
+    <fragment
+        android:id="@+id/menu_help"
+        android:name="com.example.servicesaroundme.Help.help"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/menu_log_in_out"
+        android:name="com.example.servicesaroundme.Testing.testActivity"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
+    <action android:id="@+id/action_global_menu_log_in_out" app:destination="@id/menu_log_in_out"/>
 </navigation>

@@ -46,7 +46,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/top_nav_header"
-        app:menu="@menu/top_nav_options_menu"></com.google.android.material.navigation.NavigationView>
+        app:menu="@menu/top_nav_options_menu">
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
 
 <!--    TO MAKE TOOLBAR TRANSPARENT - but didnt work-->

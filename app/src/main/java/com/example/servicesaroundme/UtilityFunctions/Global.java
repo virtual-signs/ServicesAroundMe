@@ -31,6 +31,7 @@ public class Global {
     // STATIC VARIABLES
     static boolean locationPermission = false;
     static ArrayList<MarkerOptions> markersArray = new ArrayList<>();
+    static String myUserID = null;
 
     // GETTER AND SETTER Functions
     public static boolean getLocationPermissionGranted(){
@@ -39,8 +40,10 @@ public class Global {
     public static void setLocationPermission(boolean locationPermission) { Global.locationPermission = locationPermission; }
     public static ArrayList<MarkerOptions> getMarkerData(){return markersArray;}
     public static void setMarkerData(ArrayList<MarkerOptions> markers){markersArray = markers;}
+    public static String getMyUserID() {return myUserID;}
+    public static void setMyUserID(String myUserID) {Global.myUserID = myUserID;}
 
-    // Other Global Functions Implementations
+// Other Global Functions Implementations
 
     public static void drawMarkersAroundMe(GoogleMap googleMap){
         ArrayList<MarkerOptions> tmpMarkerData = refreshMarkerList();

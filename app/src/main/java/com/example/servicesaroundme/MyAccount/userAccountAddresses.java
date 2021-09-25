@@ -162,7 +162,7 @@ public class userAccountAddresses extends Fragment {
         mColRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                Toast.makeText(getContext(), "Document does exist - " + queryDocumentSnapshots.size(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Document does exist - " + queryDocumentSnapshots.size(), Toast.LENGTH_LONG).show();
                 for (QueryDocumentSnapshot documentSnapshot:queryDocumentSnapshots){
                     AddressBook address = documentSnapshot.toObject(AddressBook.class);
                     address.setAddressId(documentSnapshot.getId());
@@ -174,7 +174,7 @@ public class userAccountAddresses extends Fragment {
         mColRef.get().addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull @NotNull Exception e) {
-                Toast.makeText(getContext(), "Failed to load data", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Failed to load data", Toast.LENGTH_LONG).show();
             }
         });
         // To fetch document there are following methods

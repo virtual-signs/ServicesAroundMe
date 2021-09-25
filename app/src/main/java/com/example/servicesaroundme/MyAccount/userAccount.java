@@ -93,9 +93,8 @@ public class userAccount extends Fragment {
 
     private void setupViewPagerAdapter(ViewPager viewPager) {
         viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getChildFragmentManager(),0);
-        viewPagerAdapter.addFragment(new userAccountInfo(), "Account");
-        viewPagerAdapter.addFragment(new userAccountAddresses(), "Addresses");
-        viewPagerAdapter.addFragment(new userAccountDeliveryInfo(), "spare");
+        viewPagerAdapter.addFragment(new userAccountInfo(), "Account Info");
+        viewPagerAdapter.addFragment(new userAccountAddresses(), "Address Book");
         viewPager.setAdapter(viewPagerAdapter);
     }
 }

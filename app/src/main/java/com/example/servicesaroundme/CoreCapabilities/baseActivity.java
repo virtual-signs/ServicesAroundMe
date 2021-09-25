@@ -20,7 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 
 public class baseActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
-    NavigationView  navigationView_container, navigationView, navigationView_footer;
+    NavigationView  navigationView;
     Toolbar toolbar;
     AppBarConfiguration appBarConfig;
     ImageView homeImage, userImage, perfImage, helpImage, logInOutImage;
@@ -33,9 +33,7 @@ public class baseActivity extends AppCompatActivity {
 
         // Navigation Drawer hooks
         drawerLayout = findViewById(R.id.drawer_layout);
-//        navigationView_container = findViewById(R.id.nav_view_container);
         navigationView = findViewById(R.id.nav_view_top);
-//        navigationView_footer = findViewById(R.id.nav_view_footer);
 
         // Toolbar hooks
         toolbar = findViewById(R.id.toolbar);
@@ -51,7 +49,6 @@ public class baseActivity extends AppCompatActivity {
             }
         });
 
-
         // Navigation View setup
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openNavigation, R.string.closeNavigation);
         drawerLayout.addDrawerListener(toggle);
@@ -60,6 +57,5 @@ public class baseActivity extends AppCompatActivity {
         // Setup Nav Controller
         NavController navController = Navigation.findNavController(this, R.id.navHostFrag);
         NavigationUI.setupWithNavController(navigationView, navController);
-
     }
 }

@@ -5,6 +5,24 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/activity_base.xml" value="1.3333333333333333" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/activity_home.xml" value="2.192857142857143" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/activity_login_registration.xml" value="1.2454361054766734" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/activity_test.xml" value="2.192857142857143" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_home.xml" value="2.192857142857143" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_service_catalogue.xml" value="0.2222222222222222" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_service_catalogue_list.xml" value="0.19671052631578947" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_service_catalogue_settings.xml" value="0.19671052631578947" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_user_account.xml" value="0.19671052631578947" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/fragment_user_account_info.xml" value="0.2222222222222222" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/list_item_cardview.xml" value="0.19671052631578947" />
+        <entry key="..\:/_SA_DATA_Laptop/9-Development/0_PlayArea/Android/ServicesAroundMe/app/src/main/res/layout/list_service_catalogue.xml" value="0.19671052631578947" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
